@@ -219,10 +219,3 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-
-
-
-
-This is a Blog API that uses Django and more specifically, the Django Rest Framework(DRF). To run it locally, install the appropriate dependencies, migrate, and then run the server. All API Endpoints:
-
-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
