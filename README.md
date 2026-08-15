@@ -1,101 +1,67 @@
-This is a Blog API that uses Django and more specifically, the Django Rest Framework(DRF).
-Tech Stack: Python, Django
-To run it locally, clone, install the appropriate dependencies, including: 
+# Blog API
 
-asgiref==3.11.1
-attrs==26.1.0
-colorama==0.4.6
-Django==6.0.6
-django-filter==26.1
-djangorestframework==3.17.1
-djangorestframework_simplejwt==5.5.1
-drf-spectacular==0.30.0
-inflection==0.5.1
-iniconfig==2.3.0
-jsonschema==4.26.0
-jsonschema-specifications==2025.9.1
-packaging==26.3
-pluggy==1.6.0
-Pygments==2.20.0
-PyJWT==2.13.0
-pytest==9.1.1
-pytest-django==4.14.0
-PyYAML==6.0.3
-referencing==0.37.0
-rpds-py==2026.6.3
-sqlparse==0.5.5
-tzdata==2026.2
-uritemplate==4.2.0
+A REST API built with Django REST Framework supporting user authentication,
+blog posts, comments, and categories.
 
-Migrate, and then run the server.
-All API Endpoints:
+## Tech Stack
+- Python
+- Django
+- Django REST Framework
+- PostgreSQL (production)
+- JWT Authentication (simplejwt)
 
-POST
-/api/register/
+## Running Locally
 
-POST
-/api/token/
+1. Clone the repo
+   git clone https://github.com/Ralixto/blog-api.git
+   cd blog-api
 
-POST
-/api/token/refresh/
+2. Create and activate a virtual environment
+   python -m venv .venv
+   .venv\Scripts\activate  # Windows
 
-category
+3. Install dependencies
+   pip install -r requirements.txt
 
-GET
-/category/
+4. Run migrations
+   python manage.py migrate
 
-POST
-/category/
+5. Start the server
+   python manage.py runserver
 
-GET
-/category/{id}/
+## API Endpoints
 
-PUT
-/category/{id}/
+### Auth
+- POST /api/register/
+- POST /api/token/
+- POST /api/token/refresh/
 
-PATCH
-/category/{id}/
+### Posts
+- GET /posts/
+- POST /posts/
+- GET /posts/{id}/
+- PUT /posts/{id}/
+- PATCH /posts/{id}/
+- DELETE /posts/{id}/
 
-DELETE
-/category/{id}/
+### Comments
+- GET /comments/
+- POST /comments/
+- GET /comments/{id}/
+- PUT /comments/{id}/
+- PATCH /comments/{id}/
+- DELETE /comments/{id}/
 
-comments
+### Categories
+- GET /category/
+- POST /category/
+- GET /category/{id}/
+- PUT /category/{id}/
+- PATCH /category/{id}/
+- DELETE /category/{id}/
 
-GET
-/comments/
+## API Documentation
+Swagger UI available at /api/docs/ after running the server.
 
-POST
-/comments/
-
-GET
-/comments/{id}/
-
-PUT
-/comments/{id}/
-
-PATCH
-/comments/{id}/
-
-DELETE
-/comments/{id}/
-
-posts
-GET
-/posts/
-
-POST
-/posts/
-
-GET
-/posts/{id}/
-
-PUT
-/posts/{id}/
-
-PATCH
-/posts/{id}/
-
-DELETE
-/posts/{id}/
-
-Swagger Docs Link : /api/docs/
+## Running Tests
+pytest
