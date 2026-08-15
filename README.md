@@ -1,5 +1,6 @@
 This is a Blog API that uses Django and more specifically, the Django Rest Framework(DRF).
-To run it locally, install the appropriate dependencies, including: 
+Tech Stack: Python, Django
+To run it locally, clone, install the appropriate dependencies, including: 
 
 asgiref==3.11.1
 attrs==26.1.0
