@@ -6,14 +6,15 @@ from .permissions import IsOwnerOrReadOnly
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
+from django.db.models import Count
 # Create your views here.
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all()
+    queryset = Category.objects.annotate(post_count=Count('posts'))
     serializer_class = CategorySerialiser
 
 class PostViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.all()
+    queryset = Post.objects.select_related('author', 'category').all()
     serializer_class = PostSerialiser
     permission_classes = [IsOwnerOrReadOnly, IsAuthenticatedOrReadOnly]
     filterset_fields = ['category', 'author', 'published']

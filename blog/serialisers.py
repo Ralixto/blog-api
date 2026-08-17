@@ -2,9 +2,10 @@ from rest_framework import serializers
 from .models import Category, Post, Comment, User
 
 class CategorySerialiser(serializers.ModelSerializer):
+    post_count = serializers.IntegerField(read_only=True)
     class Meta:
         model = Category
-        fields = ['id', 'name', 'slug']
+        fields = ['id', 'name', 'slug', 'post_count']
 
 class PostSerialiser(serializers.ModelSerializer):
     class Meta:
