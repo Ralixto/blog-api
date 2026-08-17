@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: blog-api
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn blogapi.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
