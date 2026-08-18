@@ -10,6 +10,10 @@ blog posts, comments, and categories.
 - PostgreSQL (production)
 - JWT Authentication (simplejwt)
 
+## Live API
+Base URL: https://blog-api-sjpc.onrender.com
+API Docs: https://blog-api-sjpc.onrender.com/api/docs/
+
 ## Running Locally
 
 1. Clone the repo
